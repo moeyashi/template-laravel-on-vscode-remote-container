@@ -1,29 +1,60 @@
 <?php
-  $db_connection = $_ENV['DB_CONNECTION'];
-  $db_host = $_ENV['DB_HOST'];
-  $db_port = $_ENV['DB_PORT'];
-  $db_username = $_ENV['DB_USERNAME'];
-  $db_password = $_ENV['DB_PASSWORD'];
-  try {
-    $con = new PDO("${db_connection}:dbname=test_database;host=${db_host};", $db_username, $db_password);
-    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $con->exec("CREATE TABLE IF NOT EXISTS test (
-      `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
-      `name` VARCHAR(32)
-    ) engine=innodb default charset=utf8");
-  
-    $stmt_list = $con->prepare("SELECT * FROM test;");
-    $stmt_list->execute();
-    $list = $stmt_list->fetchAll();
-    if (count($list) < 10) {
-      $con->exec("INSERT INTO test (name) VALUES ('test');");
-    } 
-  } catch(PDOException $e) {
-    echo $e->getMessage();
-  }
-  foreach ($list as $item) {
-    echo("<p>".$item['id']."</p>");
-  }
-  $con = null;
-?>
-<p>hello world!!</p>
+
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ *
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ */
+
+define('LARAVEL_START', microtime(true));
+
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| our application. We just need to utilize it! We'll simply require it
+| into the script here so that we don't have to worry about manual
+| loading any of our classes later on. It feels great to relax.
+|
+*/
+
+require __DIR__.'/../vendor/autoload.php';
+
+/*
+|--------------------------------------------------------------------------
+| Turn On The Lights
+|--------------------------------------------------------------------------
+|
+| We need to illuminate PHP development, so let us turn on the lights.
+| This bootstraps the framework and gets it ready for use, then it
+| will load up this application so that we can run it and send
+| the responses back to the browser and delight our users.
+|
+*/
+
+$app = require_once __DIR__.'/../bootstrap/app.php';
+
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can handle the incoming request
+| through the kernel, and send the associated response back to
+| the client's browser allowing them to enjoy the creative
+| and wonderful application we have prepared for them.
+|
+*/
+
+$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+
+$response = $kernel->handle(
+    $request = Illuminate\Http\Request::capture()
+);
+
+$response->send();
+
+$kernel->terminate($request, $response);
