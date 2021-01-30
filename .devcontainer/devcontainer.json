@@ -4,7 +4,11 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
-  "extensions": [],
-  "settings": [],
+  "extensions": [
+    "ikappas.phpcs"
+  ],
+  "settings": {
+    "phpcs.composerJsonPath": "./src/composer.json"
+  },
   "postCreateCommand": "php --version"
 }
