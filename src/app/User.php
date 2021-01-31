@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function ifElsePatter(int $idx, int $idy)
+    {
+        if ($idx == $idy) {
+            return $idx;
+        }
+        return $idy;
+    }
 }

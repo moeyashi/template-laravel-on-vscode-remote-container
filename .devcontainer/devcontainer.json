@@ -5,10 +5,13 @@
   "service": "app",
   "workspaceFolder": "/workspace",
   "extensions": [
-    "ikappas.phpcs"
+    "ikappas.phpcs",
+    "ecodes.vscode-phpmd",
+    "bmewburn.vscode-intelephense-client"
   ],
   "settings": {
-    "phpcs.composerJsonPath": "./src/composer.json"
+    "phpcs.composerJsonPath": "./src/composer.json",
+    "phpmd.command": "./src/vendor/bin/phpmd"
   },
   "postCreateCommand": "php --version"
 }
