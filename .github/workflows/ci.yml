@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: nanasess/setup-php@master
         with:
-          php-version: 8
+          php-version: 8.2
       - run: php -v
       - run: composer install
         working-directory: ./src
