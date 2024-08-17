@@ -28,7 +28,7 @@ jobs:
         id: cache
         uses: actions/cache@v1
         with:
-          path: ./vendor
+          path: ./src/vendor
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
