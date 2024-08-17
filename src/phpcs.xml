@@ -4,15 +4,15 @@
   <!-- 説明 -->
   <description>Custom ruleset Based on PSR12</description>
   <!-- 参照するルール( `PSR12` ) -->
-  <rule ref="PSR12" />
+  <rule ref="PSR12"/>
 
   <!-- 拡張子を指定する(.php) -->
-  <arg name="extensions" value="php" />
+  <arg name="extensions" value="php"/>
   <!-- 結果出力に色を付ける -->
-  <arg name="colors" />
+  <arg name="colors"/>
   <!-- 進捗を表示する(-p) -->
   <!-- エラー情報に、違反したルールを表示する(-s) -->
-  <arg value="ps" />
+  <arg value="ps"/>
 
   <!-- チェックから除外するディレクトリ(Laravelの場合) -->
   <exclude-pattern>/bootstrap/</exclude-pattern>
@@ -24,4 +24,5 @@
   <exclude-pattern>/routes/</exclude-pattern>
   <exclude-pattern>/storage/</exclude-pattern>
   <exclude-pattern>/vendor/</exclude-pattern>
+  <exclude-pattern>/tests/</exclude-pattern>
 </ruleset>
