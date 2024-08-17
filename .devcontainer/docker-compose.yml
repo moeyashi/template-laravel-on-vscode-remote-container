@@ -26,7 +26,7 @@ services:
       - db-store:/var/lib/mysql
       - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
     environment:
-      - MYSQL_DATABASE=${DB_NAME:-test_database}
+      - MYSQL_DATABASE=${DB_NAME:-laravel}
       - MYSQL_USER=${DB_USER:-phper}
       - MYSQL_PASSWORD=${DB_PASS:-secret}
       - MYSQL_ROOT_PASSWORD=${DB_PASS:-secret}
