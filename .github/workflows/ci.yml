@@ -27,3 +27,4 @@ jobs:
       - run: composer run lint
         working-directory: ./src
       - run: php artisan test
+        working-directory: ./src
