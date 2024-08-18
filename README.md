@@ -2,12 +2,7 @@
 
 ## how to start app
 
-in your Dev Container
-
-```bash
-cd src
-composer install
-```
+Open your Dev Container
 
 ## test
 
@@ -21,4 +16,11 @@ php artisan test
 ```bash
 cd src
 composer run lint
+```
+
+## dev frontend
+
+```bash
+cd src
+npm run dev
 ```
