@@ -3,7 +3,7 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
-  "postCreateCommand": "/bin/sh ./.devcontainer/postCreateCommand.sh",
+  "postCreateCommand": "/bin/bash ./.devcontainer/postCreateCommand.sh",
   "customizations": {
     "vscode": {
       "extensions": [

@@ -8,4 +8,5 @@ php artisan migrate
 
 # set up node
 curl https://get.volta.sh | bash
+source ~/.bashrc
 npm install
