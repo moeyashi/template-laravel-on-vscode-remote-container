@@ -3,8 +3,7 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
-  // git clone --recursive https://github.com/[org]/[repo].git とかかけばcloneされる
-  "postCreateCommand": "php --version",
+  "postCreateCommand": "/bin/bash ./.devcontainer/postCreateCommand.sh",
   "customizations": {
     "vscode": {
       "extensions": [
